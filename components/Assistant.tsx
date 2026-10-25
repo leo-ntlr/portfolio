@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { profile, projects } from "@/content/profile";
+import { certifications, education, experience, profile, projects, roles, skills, spokenLanguages } from "@/content/profile";
 import { useApp } from "@/lib/app-state";
 import { Icon, icons } from "./Icon";
 
@@ -14,10 +14,25 @@ const STEPS = ["name", "org", "details", "email"] as const;
 type Step = (typeof STEPS)[number];
 type Draft = Partial<Record<Step, string>> & { kind: Kind };
 
-const OFFER_RE = /offre|offer|job|poste|emploi|hire|hiring|recrut|stage|intern|cdi|cdd/;
+const OFFER_RE = /offre|offer|hire|hiring|recrut|embauch|\bcdi\b|\bcdd\b|(j'?ai|nous avons|we have|i have) (un|une|a|an) (job|poste|emploi|role|position|opportunit)/;
 const COLLAB_RE = /collab|partenariat|partner|freelance|ensemble|together/;
-const PROJECTS_RE = /projet|project|portfolio|realisation|work/;
-const AVAIL_RE = /dispo|avail|quand|when|start|commencer/;
+
+// Topics the assistant can answer from the profile when the AI is offline, checked in order.
+type Topic = "greet" | "thanks" | "avail" | "cert" | "edu" | "exp" | "langs" | "contact" | "city" | "skills" | "projects" | "about";
+const TOPICS: [Topic, RegExp][] = [
+  ["thanks", /\b(merci|thanks?|thank you)\b/],
+  ["avail", /dispo|avail|quand|when|start|commencer|debut/],
+  ["cert", /certif|diplome? pro|badge|ccna|comptia|aws|azure/],
+  ["edu", /etude|formation|diplome|degree|educat|school|ecole|universit|college|bac|master|licence|bachelor|niveau scolaire/],
+  ["exp", /experience|stage|intern|emploi passe|worked|travaille|parcours|carriere|career/],
+  ["langs", /langue|language|parle|speak|anglais|english|francais|french/],
+  ["contact", /contact|email|courriel|mail|joindre|reach|linkedin|github|cv|resume/],
+  ["city", /ville|city|where|habite|live|localisation|location|remote|teletravail|demenag|reloc/],
+  ["skills", /competence|skill|stack|techno|outil|tool|langage|python|java|react|sql|reseau|network|sait faire|can you do/],
+  ["projects", /projet|project|portfolio|realisation|work/],
+  ["about", /qui es|who are|who is|present|about|profil|toi|yourself|role|metier|poste vise/],
+  ["greet", /^(salut|bonjour|bonsoir|hello|hi|hey|coucou|yo)\b/],
+];
 
 const fold = (t: string) => t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
@@ -81,12 +96,8 @@ export function Assistant() {
       .map((m) => ({ role: m.from === "me" ? "user" : "assistant", content: m.text }));
     // The API conversation must open with the visitor's message.
     while (messages.length && messages[0].role !== "user") messages.shift();
-    // Scripted answers for the common questions when the AI is offline.
     const last = history[history.length - 1];
-    const q = last && last.from === "me" ? fold(last.text) : "";
-    let reply = c.fallback;
-    if (AVAIL_RE.test(q)) reply = tr(profile.availability);
-    else if (PROJECTS_RE.test(q)) reply = `${c.projectsIntro} ${projects.slice(0, 3).map((p) => tr(p.title)).join(", ")}.`;
+    let reply = scripted(last && last.from === "me" ? last.text : "");
     try {
       const res = await fetch("/api/chat", {
         method: "POST",
@@ -100,6 +111,29 @@ export function Assistant() {
     } catch {}
     setTyping(false);
     setMsgs((m) => [...m, { from: "bot", text: reply }]);
+  };
+
+  /** Answer from the profile, used whenever the AI route is unavailable. */
+  const scripted = (text: string): string => {
+    const q = fold(text.trim());
+    const topic = TOPICS.find(([, re]) => re.test(q))?.[0];
+    const a = c.scripted;
+    const list = (items: string[]) => items.join(" · ");
+    switch (topic) {
+      case "greet": return a.greet;
+      case "thanks": return a.thanks;
+      case "avail": return tr(profile.availability);
+      case "projects": return `${a.projects} ${projects.slice(0, 3).map((p) => tr(p.title)).join(", ")}.`;
+      case "skills": return `${a.skills} ${list(skills.map((sk) => tr(sk.name)))}.`;
+      case "edu": return `${a.edu} ${list(education.map((d) => `${tr(d.degree)}, ${tr(d.school)} (${tr(d.dates)})`))}.`;
+      case "cert": return `${a.cert} ${list(certifications.map((ce) => `${ce.name} (${ce.issuer}, ${ce.year})`))}.`;
+      case "exp": return `${a.exp} ${list(experience.map((e) => `${tr(e.title)}, ${e.company} (${tr(e.dates)})`))}.`;
+      case "langs": return `${a.langs} ${list(spokenLanguages.map((l) => `${tr(l.name)}: ${tr(l.level)}`))}.`;
+      case "contact": return a.contact.replace("{email}", profile.email).replace("{linkedin}", profile.links.linkedin);
+      case "city": return `${tr(profile.city)}. ${tr(profile.availability)}`;
+      case "about": return `${a.about} ${list(roles.map((r) => tr(r.label)))}.`;
+      default: return c.fallback;
+    }
   };
 
   const send = (raw: string) => {
