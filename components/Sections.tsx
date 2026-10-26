@@ -124,7 +124,7 @@ export function ExperienceSection() {
             <span className="node" />
             <div className="mono">{tr(job.dates)}</div>
             <h3>{tr(job.title)}</h3>
-            <div style={{ fontWeight: 500 }}>{job.company} · {job.city}</div>
+            <div style={{ fontWeight: 500 }}>{job.company}{job.city ? ` · ${job.city}` : ""}</div>
             <p>{tr(job.summary)}</p>
           </li>
         ))}

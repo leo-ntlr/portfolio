@@ -317,7 +317,7 @@ export const roles: Role[] = [
 
 export const stats: { value: string; label: Text }[] = [
   { value: "[N]", label: { en: "projects shipped", fr: "projets livrés" } },
-  { value: "[N]", label: { en: "internships completed", fr: "stages réalisés" } },
+  { value: "2", label: { en: "internships completed", fr: "stages réalisés" } },
   // Counted from the role stacks above.
   { value: `${new Set(roles.flatMap((r) => r.stack.map((t) => t.en))).size}+`, label: { en: "technologies and tools mastered", fr: "technologies et outils maîtrisés" } },
   { value: "[N]", label: { en: "AI solutions delivered", fr: "solutions IA livrées" } },
@@ -340,16 +340,47 @@ export const projects: Project[] = [
   { title: { en: "[UI / PROTOTYPE PROJECT]", fr: "[PROJET UI / PROTOTYPE]" }, category: { en: "Design · interface", fr: "Design · interface" }, summary: projectSummary, tech: ["[DESIGN TOOL]", "[FRAMEWORK]"], roles: ["design", "dev"], image: "", caseStudyUrl: "#", githubUrl: "#" },
 ];
 
-const jobSummary: Text = {
-  en: "[What you did and what changed because of it.]",
-  fr: "[Ce que vous avez fait et ce que ça a changé.]",
-};
-const jobDates: Text = { en: "[START] — [END]", fr: "[DÉBUT] — [FIN]" };
-
 export const experience: Experience[] = [
-  { dates: jobDates, title: { en: "[INTERNSHIP TITLE]", fr: "[INTITULÉ DU STAGE]" }, company: "[COMPANY]", city: "[CITY]", summary: jobSummary },
-  { dates: jobDates, title: { en: "[INTERNSHIP TITLE]", fr: "[INTITULÉ DU STAGE]" }, company: "[COMPANY]", city: "[CITY]", summary: jobSummary },
-  { dates: jobDates, title: { en: "[PROJECT OR ROLE TITLE]", fr: "[INTITULÉ DU PROJET OU DU POSTE]" }, company: "[COMPANY]", city: "[CITY]", summary: jobSummary },
+  {
+    dates: { en: "Summer 2026", fr: "Été 2026" },
+    title: { en: "Research intern", fr: "Stagiaire chercheur" },
+    company: "Université du Québec en Outaouais (UQO)",
+    city: "",
+    summary: {
+      en: "Trained and evaluated machine learning and deep learning models, and wrote Python scripts to automate the data processing pipeline.",
+      fr: "Entraînement et évaluation de modèles d'apprentissage automatique et profond, et scripts Python pour automatiser le pipeline de traitement des données.",
+    },
+  },
+  {
+    dates: { en: "2025 — 2026", fr: "2025 — 2026" },
+    title: { en: "Computer science and French tutor", fr: "Tuteur en informatique et en français" },
+    company: "Cégep de Saint-Jérôme",
+    city: "",
+    summary: {
+      en: "One-on-one support for students in programming and French: explaining complex concepts clearly and helping them solve problems.",
+      fr: "Accompagnement personnalisé d'étudiants en programmation et en français : explication claire de concepts complexes et aide à la résolution de problèmes.",
+    },
+  },
+  {
+    dates: { en: "2024", fr: "2024" },
+    title: { en: "IT consulting intern", fr: "Stagiaire consultant en informatique" },
+    company: "Datnek",
+    city: "",
+    summary: {
+      en: "Analyzed clients' IT needs, proposed suitable solutions, and designed and built websites.",
+      fr: "Analyse des besoins informatiques des clients, proposition de solutions adaptées, conception et développement de sites web.",
+    },
+  },
+  {
+    dates: { en: "2022 — present", fr: "2022 — aujourd'hui" },
+    title: { en: "Web developer", fr: "Développeur web" },
+    company: "Freelance",
+    city: "",
+    summary: {
+      en: "Websites and web apps from mockup to launch, with debugging, optimization and end-to-end project management.",
+      fr: "Sites et applications web de la maquette à la mise en ligne, avec débogage, optimisation et gestion de projet de A à Z.",
+    },
+  },
 ];
 
 export const education: Degree[] = [
