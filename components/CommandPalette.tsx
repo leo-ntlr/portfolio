@@ -96,7 +96,7 @@ export function CommandPalette() {
       ...roles.map((r) => ({
         group: "roles" as const,
         title: `${p.viewAs} ${tr(r.label)}`,
-        keywords: `${r.label.en} ${r.label.fr} ${r.short.en} ${r.short.fr}`,
+        keywords: `${r.label.en} ${r.label.fr} ${r.short.en} ${r.short.fr} ${r.stack.map((t) => `${t.en} ${t.fr}`).join(" ")}`,
         run: pickRole(r.id),
       })),
       ...sections,

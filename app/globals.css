@@ -138,6 +138,9 @@ img { max-width: 100%; display: block; }
 .facts > div { display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 14px 0; border-top: 1px solid var(--line); }
 .facts dt { flex: 0 0 140px; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 .facts dd { margin: 0; flex: 1 1 200px; }
+.stack { display: flex; flex-direction: column; gap: 12px; padding-top: 16px; border-top: 1px solid var(--line); }
+.stack h3 { margin: 0; }
+.stack .chip { font-size: 13px; padding: 5px 10px; }
 .stats { flex: 1 1 320px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .stat { padding: 24px; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; transition: border-color 0.25s ease; }
 .stat:hover { border-color: var(--ink); }

@@ -39,6 +39,14 @@ export function ProfileStats() {
             </div>
           ))}
         </dl>
+        <div className="stack">
+          <h3 className="small-caps">{s.stackTitle}</h3>
+          <div className="chips">
+            {cur.stack.map((t, i) => (
+              <span key={i} className="chip">{tr(t)}</span>
+            ))}
+          </div>
+        </div>
       </div>
       <div className="stats">
         {stats.map((st, i) => (
