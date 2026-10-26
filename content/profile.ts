@@ -357,7 +357,7 @@ export const education: Degree[] = [
     dates: { en: "2025 — 2028 (in progress)", fr: "2025 — 2028 (en cours)" },
     degree: { en: "DEC (Diploma of College Studies) in Computer Science Technology", fr: "DEC en techniques de l'informatique" },
     school: { en: "Cégep de Saint-Jérôme · Saint-Jérôme, QC", fr: "Cégep de Saint-Jérôme · Saint-Jérôme (Québec)" },
-    details: { en: "Three-year technical program. Member of the Research Track (Parcours recherche).", fr: "Programme technique de trois ans. Membre du Parcours recherche." },
+    details: { en: "Three-year technical program.", fr: "Programme technique de trois ans." },
   },
 ];
 
@@ -415,7 +415,10 @@ export const talks: Text[] = [
 export const volunteering: Text[] = [
   { en: "Computer science tutor, Cégep de Saint-Jérôme", fr: "Tuteur en informatique, Cégep de Saint-Jérôme" },
   { en: "French tutor, Cégep de Saint-Jérôme", fr: "Tuteur en français, Cégep de Saint-Jérôme" },
-  { en: "Member of the Research Track (Parcours recherche)", fr: "Membre du Parcours recherche" },
+  {
+    en: "Member of the first cohort of the Research Track (Parcours recherche), Cégep de Saint-Jérôme: scientific research activities in various fields and company visits",
+    fr: "Membre de la première cohorte du Parcours recherche du Cégep de Saint-Jérôme : activités de recherche scientifique dans divers domaines et visites en entreprise",
+  },
   { en: "Member of the Quartier général de l'audace", fr: "Membre du Quartier général de l'audace" },
   { en: "Volunteer, L'École des grands", fr: "Bénévole à L'École des grands" },
   { en: "Volunteer, Fondation 4M", fr: "Bénévole pour la Fondation 4M" },
