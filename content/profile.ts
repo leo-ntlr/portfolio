@@ -355,11 +355,11 @@ export const experience: Experience[] = [
   {
     dates: { en: "Present", fr: "Aujourd'hui" },
     title: { en: "Researcher in financial and data analysis", fr: "Chercheur en analyse financière et analyse de données" },
-    company: "",
+    company: { en: "Independent research", fr: "Recherche personnelle" },
     city: "",
     summary: {
-      en: "Financial analysis and data analysis to support data-driven decision making.",
-      fr: "Analyse financière et analyse de données pour appuyer une prise de décision fondée sur les données.",
+      en: "Personal research in financial and data analysis to deepen my expertise in the field and support data-driven decision making.",
+      fr: "Recherches personnelles en analyse financière et en analyse de données pour approfondir mon expertise du domaine et appuyer une prise de décision fondée sur les données.",
     },
   },
   {
