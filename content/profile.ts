@@ -61,15 +61,15 @@ export interface Certification {
 }
 
 export const profile = {
-  name: { en: "[YOUR NAME]", fr: "[VOTRE NOM]" } as Text,
-  initials: "[YN]",
+  name: { en: "Leonel Ryan Ntuh Takam", fr: "Leonel Ryan Ntuh Takam" } as Text,
+  initials: "leo_ntlr",
   email: "you@example.com",
-  city: { en: "[YOUR CITY]", fr: "[VOTRE VILLE]" } as Text,
+  city: { en: "Anywhere, remote or on site", fr: "Partout, à distance ou sur place" } as Text,
   /** Professional photo under /public, e.g. "/photo.jpg". Empty shows a placeholder. */
   photo: "/photo.jpg",
   links: {
     linkedin: "https://www.linkedin.com/in/[your-profile]",
-    github: "https://github.com/[your-username]",
+    github: "https://github.com/leo-ntlr",
     cv: "/cv.pdf",
   },
   headline: {

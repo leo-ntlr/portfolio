@@ -4,7 +4,7 @@ import { AppStateProvider } from "@/lib/app-state";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "[YOUR NAME] · Portfolio",
+  title: "Leonel Ryan Ntuh Takam · Portfolio",
   description: "Developer, data and AI, networking, IT support and consulting. Complex problems, simple solutions.",
 };
 
