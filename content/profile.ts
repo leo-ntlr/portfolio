@@ -66,7 +66,7 @@ export const profile = {
   email: "you@example.com",
   city: { en: "[YOUR CITY]", fr: "[VOTRE VILLE]" } as Text,
   /** Professional photo under /public, e.g. "/photo.jpg". Empty shows a placeholder. */
-  photo: "",
+  photo: "/photo.jpg",
   links: {
     linkedin: "https://www.linkedin.com/in/[your-profile]",
     github: "https://github.com/[your-username]",
