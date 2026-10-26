@@ -190,6 +190,8 @@ img { max-width: 100%; display: block; }
 .cert small { font-size: 13px; color: var(--ink2); }
 .extras { display: flex; flex-wrap: wrap; gap: 24px; }
 .extra { padding: 24px; display: flex; flex-direction: column; gap: 14px; }
+.extra-list { margin: 0; padding: 12px 0 0 18px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; font-size: 15px; }
+.extra-list li::marker { color: var(--accent); }
 .extra-row { display: flex; justify-content: space-between; gap: 12px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 15px; }
 
 /* Assistant */

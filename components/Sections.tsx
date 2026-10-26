@@ -10,6 +10,8 @@ import {
   roles,
   spokenLanguages,
   stats,
+  talks,
+  volunteering,
 } from "@/content/profile";
 import { useApp } from "@/lib/app-state";
 import { Icon, icons } from "./Icon";
@@ -183,12 +185,12 @@ export function EducationSection() {
         </div>
       </div>
       <div className="extras">
-        <div className="card extra" style={{ flex: "1 1 340px" }}>
+        <div className="card extra" style={{ flex: "1 1 300px" }}>
           <h3 className="small-caps">{s.languages}</h3>
           {spokenLanguages.map((l, i) => (
             <div key={i} className="extra-row">
               <span style={{ fontWeight: 500 }}>{tr(l.name)}</span>
-              <span style={{ color: "var(--ink2)" }}>{tr(l.level)}</span>
+              <span style={{ color: "var(--ink2)", textAlign: "right" }}>{tr(l.level)}</span>
             </div>
           ))}
         </div>
@@ -196,10 +198,26 @@ export function EducationSection() {
           <h3 className="small-caps">{s.awards}</h3>
           {awards.map((a, i) => (
             <div key={i} className="extra-row" style={{ justifyContent: "flex-start", gap: 16 }}>
-              <span className="mono" style={{ minWidth: 64 }}>{a.year}</span>
+              <span className="mono" style={{ minWidth: 48 }}>{a.year}</span>
               <span>{tr(a.text)}</span>
             </div>
           ))}
+        </div>
+        <div className="card extra" style={{ flex: "1 1 380px" }}>
+          <h3 className="small-caps">{s.talks}</h3>
+          {talks.map((t, i) => (
+            <div key={i} className="extra-row" style={{ justifyContent: "flex-start" }}>
+              <span>{tr(t)}</span>
+            </div>
+          ))}
+        </div>
+        <div className="card extra" style={{ flex: "1 1 380px" }}>
+          <h3 className="small-caps">{s.volunteering}</h3>
+          <ul className="extra-list">
+            {volunteering.map((v, i) => (
+              <li key={i}>{tr(v)}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

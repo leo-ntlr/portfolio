@@ -9,6 +9,8 @@ import {
   roles,
   skills,
   spokenLanguages,
+  talks,
+  volunteering,
   type Lang,
 } from "@/content/profile";
 
@@ -43,6 +45,8 @@ ${JSON.stringify(
     certifications: certifications.map((c) => ({ name: c.name, issuer: c.issuer, year: c.year })),
     languages: spokenLanguages.map((l) => `${l.name.en}: ${l.level.en}`),
     awards: awards.map((a) => `${a.year}: ${a.text.en}`),
+    talks: talks.map((t) => t.en),
+    volunteering: volunteering.map((v) => v.en),
     skills: skills.map((s) => `${s.name.en} (${s.keywords})`),
   },
   null,

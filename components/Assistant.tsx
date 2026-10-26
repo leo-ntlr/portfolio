@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { certifications, education, experience, profile, projects, roles, skills, spokenLanguages } from "@/content/profile";
+import { awards, certifications, education, experience, profile, projects, roles, skills, spokenLanguages, talks, volunteering } from "@/content/profile";
 import { useApp } from "@/lib/app-state";
 import { Icon, icons } from "./Icon";
 
@@ -18,9 +18,12 @@ const OFFER_RE = /offre|offer|hire|hiring|recrut|embauch|\bcdi\b|\bcdd\b|(j'?ai|
 const COLLAB_RE = /collab|partenariat|partner|freelance|ensemble|together/;
 
 // Topics the assistant can answer from the profile when the AI is offline, checked in order.
-type Topic = "greet" | "thanks" | "avail" | "cert" | "edu" | "exp" | "langs" | "contact" | "city" | "skills" | "projects" | "about";
+type Topic = "greet" | "thanks" | "awards" | "talks" | "volunteer" | "avail" | "cert" | "edu" | "exp" | "langs" | "contact" | "city" | "skills" | "projects" | "about";
 const TOPICS: [Topic, RegExp][] = [
   ["thanks", /\b(merci|thanks?|thank you)\b/],
+  ["awards", /prix|distinction|award|gagn|\bwon\b|\bwin\b|hackathon|concours|competition|osentreprendre|lavia/],
+  ["talks", /conferenc|talk|speaker|expos|presentation/],
+  ["volunteer", /benevol|volunt|tuteur|tutor|engagement|implication|communaut/],
   ["avail", /dispo|avail|quand|when|start|commencer|debut/],
   ["cert", /certif|diplome? pro|badge|ccna|comptia|aws|azure/],
   ["edu", /etude|formation|diplome|degree|educat|school|ecole|universit|college|bac|master|licence|bachelor|niveau scolaire/],
@@ -122,6 +125,9 @@ export function Assistant() {
     switch (topic) {
       case "greet": return a.greet;
       case "thanks": return a.thanks;
+      case "awards": return `${a.awards} ${list(awards.map((w) => `${w.year} : ${tr(w.text)}`))}.`;
+      case "talks": return `${a.talks} ${list(talks.map((t) => tr(t)))}.`;
+      case "volunteer": return `${a.volunteer} ${list(volunteering.map((v) => tr(v)))}.`;
       case "avail": return tr(profile.availability);
       case "projects": return `${a.projects} ${projects.slice(0, 3).map((p) => tr(p.title)).join(", ")}.`;
       case "skills": return `${a.skills} ${list(skills.map((sk) => tr(sk.name)))}.`;

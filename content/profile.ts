@@ -354,16 +354,10 @@ export const experience: Experience[] = [
 
 export const education: Degree[] = [
   {
-    dates: jobDates,
-    degree: { en: "[DEGREE — e.g. Bachelor in Computer Science]", fr: "[DIPLÔME — ex. Baccalauréat en informatique]" },
-    school: { en: "[SCHOOL / UNIVERSITY] · [CITY]", fr: "[ÉCOLE / UNIVERSITÉ] · [VILLE]" },
-    details: { en: "[Specialization, honors, GPA or key courses.]", fr: "[Spécialisation, mention, moyenne ou cours clés.]" },
-  },
-  {
-    dates: jobDates,
-    degree: { en: "[DIPLOMA — e.g. Technical diploma in IT]", fr: "[DIPLÔME — ex. DEC en techniques de l'informatique]" },
-    school: { en: "[SCHOOL] · [CITY]", fr: "[ÉCOLE] · [VILLE]" },
-    details: { en: "[Specialization, honors or key courses.]", fr: "[Spécialisation, mention ou cours clés.]" },
+    dates: { en: "2025 — 2028 (in progress)", fr: "2025 — 2028 (en cours)" },
+    degree: { en: "DEC (Diploma of College Studies) in Computer Science Technology", fr: "DEC en techniques de l'informatique" },
+    school: { en: "Cégep de Saint-Jérôme · Saint-Jérôme, QC", fr: "Cégep de Saint-Jérôme · Saint-Jérôme (Québec)" },
+    details: { en: "Three-year technical program. Member of the Research Track (Parcours recherche).", fr: "Programme technique de trois ans. Membre du Parcours recherche." },
   },
 ];
 
@@ -377,14 +371,56 @@ export const certifications: Certification[] = [
 ];
 
 export const spokenLanguages: { name: Text; level: Text }[] = [
-  { name: { en: "French", fr: "Français" }, level: { en: "[LEVEL — e.g. Native]", fr: "[NIVEAU — ex. Langue maternelle]" } },
-  { name: { en: "English", fr: "Anglais" }, level: { en: "[LEVEL — e.g. Fluent (C1)]", fr: "[NIVEAU — ex. Courant (C1)]" } },
+  { name: { en: "French", fr: "Français" }, level: { en: "Native", fr: "Langue maternelle" } },
+  { name: { en: "English", fr: "Anglais" }, level: { en: "Fully bilingual", fr: "Bilingue, aussi à l'aise qu'en français" } },
 ];
 
 export const awards: { year: string; text: Text }[] = [
-  { year: "[YEAR]", text: { en: "[AWARD, HACKATHON OR COMPETITION]", fr: "[PRIX, HACKATHON OU COMPÉTITION]" } },
-  { year: "[YEAR]", text: { en: "[VOLUNTEERING OR ASSOCIATION ROLE]", fr: "[BÉNÉVOLAT OU RÔLE ASSOCIATIF]" } },
-  { year: "[YEAR]", text: { en: "[PUBLICATION, TALK OR OPEN-SOURCE CONTRIBUTION]", fr: "[PUBLICATION, CONFÉRENCE OU CONTRIBUTION OPEN SOURCE]" } },
+  {
+    year: "2026",
+    text: {
+      en: "Winner, LAVIA hackathon: an AI platform that adapts teachers' course content to the student groups in their classroom (neurodivergent students, international students…)",
+      fr: "Gagnant du hackathon du LAVIA : une plateforme IA qui adapte le contenu pédagogique des enseignants aux groupes d'étudiants de leur classe (neurodivergents, étudiants internationaux…)",
+    },
+  },
+  {
+    year: "2026",
+    text: {
+      en: "Local winner for the Laurentides region, OSEntreprendre competition, with my clothing brand StreetRoots",
+      fr: "Lauréat local pour la région des Laurentides au concours OSEntreprendre, avec ma marque de vêtements StreetRoots",
+    },
+  },
+  {
+    year: "2026",
+    text: {
+      en: "Top 50 of 208 participants, Association mathématique du Québec competition",
+      fr: "Top 50 sur 208 participants au concours de l'Association mathématique du Québec",
+    },
+  },
+];
+
+/** Talks and exhibitions. */
+export const talks: Text[] = [
+  {
+    en: "Speaker: presented my project on classifying white-matter tract trajectories to Cégep de Saint-Jérôme students",
+    fr: "Conférencier : présentation de mon projet de classification de la trajectoire de la matière blanche aux étudiants du Cégep de Saint-Jérôme",
+  },
+  {
+    en: "Exhibitor at the conference on the impact of AI on young people, Centre clinique de Montréal",
+    fr: "Exposant à la conférence sur l'impact de l'IA chez les jeunes, Centre clinique de Montréal",
+  },
+];
+
+/** Volunteering and community involvement. */
+export const volunteering: Text[] = [
+  { en: "Computer science tutor, Cégep de Saint-Jérôme", fr: "Tuteur en informatique, Cégep de Saint-Jérôme" },
+  { en: "French tutor, Cégep de Saint-Jérôme", fr: "Tuteur en français, Cégep de Saint-Jérôme" },
+  { en: "Member of the Research Track (Parcours recherche)", fr: "Membre du Parcours recherche" },
+  { en: "Member of the Quartier général de l'audace", fr: "Membre du Quartier général de l'audace" },
+  { en: "Volunteer, L'École des grands", fr: "Bénévole à L'École des grands" },
+  { en: "Volunteer, Fondation 4M", fr: "Bénévole pour la Fondation 4M" },
+  { en: "Volunteer, Tim Hortons Foundation", fr: "Bénévole pour la Fondation Tim Hortons" },
+  { en: "Participant, Gabriel-Major intercollegiate literature competition", fr: "Participant au concours de littérature intercollégial Gabriel-Major" },
 ];
 
 /** Skills used by the search and by the assistant; each points to the role it belongs to. */
