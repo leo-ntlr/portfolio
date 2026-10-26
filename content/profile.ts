@@ -65,7 +65,7 @@ export interface Certification {
 export const profile = {
   name: { en: "Leonel Ryan Ntuh Takam", fr: "Leonel Ryan Ntuh Takam" } as Text,
   initials: "leo_ntlr",
-  email: "you@example.com",
+  email: "ryantakam12@gmail.com",
   city: { en: "Anywhere, remote or on site", fr: "Partout, à distance ou sur place" } as Text,
   /** Professional photo under /public, e.g. "/photo.jpg". Empty shows a placeholder. */
   photo: "/photo.jpg",
@@ -372,7 +372,7 @@ export const certifications: Certification[] = [
 
 export const spokenLanguages: { name: Text; level: Text }[] = [
   { name: { en: "French", fr: "Français" }, level: { en: "Native", fr: "Langue maternelle" } },
-  { name: { en: "English", fr: "Anglais" }, level: { en: "Fully bilingual", fr: "Bilingue, aussi à l'aise qu'en français" } },
+  { name: { en: "English", fr: "Anglais" }, level: { en: "Excellent", fr: "Excellent" } },
 ];
 
 export const awards: { year: string; text: Text }[] = [
