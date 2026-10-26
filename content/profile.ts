@@ -391,6 +391,16 @@ export const experience: Experience[] = [
       fr: "Sites et applications web de la maquette à la mise en ligne, avec débogage, optimisation et gestion de projet de A à Z.",
     },
   },
+  {
+    dates: { en: "2024 — 2025", fr: "2024 — 2025" },
+    title: { en: "General manager (volunteer)", fr: "Gérant polyvalent (bénévole)" },
+    company: "Fondation 4M",
+    city: "",
+    summary: {
+      en: "Managed IT hardware and production equipment, and trained new volunteers on tools and procedures.",
+      fr: "Gestion du matériel informatique et des équipements de production, et formation des nouveaux bénévoles aux outils et aux procédures.",
+    },
+  },
 ];
 
 export const education: Degree[] = [
