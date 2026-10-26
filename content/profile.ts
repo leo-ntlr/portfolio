@@ -342,6 +342,16 @@ export const projects: Project[] = [
 
 export const experience: Experience[] = [
   {
+    dates: { en: "Present", fr: "Aujourd'hui" },
+    title: { en: "Founder and CEO", fr: "Fondateur et PDG" },
+    company: "Nexorithm",
+    city: "",
+    summary: {
+      en: "I lead an IT consulting startup and its team: AI consulting that helps SMBs automate repetitive tasks, AI and data strategy, data consulting, IT security, custom development, and cloud and IT consulting.",
+      fr: "Je dirige une startup de services-conseils en informatique et son équipe : conseil en IA pour aider les PME à automatiser leurs tâches répétitives, stratégie IA et données, conseil en données, sécurité informatique, développement sur mesure, infonuagique et TI.",
+    },
+  },
+  {
     dates: { en: "Summer 2026", fr: "Été 2026" },
     title: { en: "Research intern", fr: "Stagiaire chercheur" },
     company: "Université du Québec en Outaouais (UQO)",
