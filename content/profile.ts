@@ -70,7 +70,7 @@ export const profile = {
   /** Professional photo under /public, e.g. "/photo.jpg". Empty shows a placeholder. */
   photo: "/photo.jpg",
   links: {
-    linkedin: "https://www.linkedin.com/in/[your-profile]",
+    linkedin: "https://www.linkedin.com/in/ryan-takam",
     github: "https://github.com/leo-ntlr",
     cv: "/cv.pdf",
   },
