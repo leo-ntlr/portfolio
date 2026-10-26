@@ -444,6 +444,7 @@ export const talks: Text[] = [
 
 /** Volunteering and community involvement. */
 export const volunteering: Text[] = [
+  { en: "Author of books that satirize social issues", fr: "Auteur de livres qui font la satire des faits sociaux" },
   { en: "Computer science tutor, Cégep de Saint-Jérôme", fr: "Tuteur en informatique, Cégep de Saint-Jérôme" },
   { en: "French tutor, Cégep de Saint-Jérôme", fr: "Tuteur en français, Cégep de Saint-Jérôme" },
   {
