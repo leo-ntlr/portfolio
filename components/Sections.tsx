@@ -124,7 +124,11 @@ export function ExperienceSection() {
             <span className="node" />
             <div className="mono">{tr(job.dates)}</div>
             <h3>{tr(job.title)}</h3>
-            <div style={{ fontWeight: 500 }}>{job.company}{job.city ? ` · ${job.city}` : ""}</div>
+            {(job.company || job.city) && (
+              <div style={{ fontWeight: 500 }}>
+                {[typeof job.company === "string" ? job.company : tr(job.company), job.city].filter(Boolean).join(" · ")}
+              </div>
+            )}
             <p>{tr(job.summary)}</p>
           </li>
         ))}

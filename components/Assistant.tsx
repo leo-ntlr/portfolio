@@ -133,7 +133,7 @@ export function Assistant() {
       case "skills": return `${a.skills} ${list(skills.map((sk) => tr(sk.name)))}.`;
       case "edu": return `${a.edu} ${list(education.map((d) => `${tr(d.degree)}, ${tr(d.school)} (${tr(d.dates)})`))}.`;
       case "cert": return `${a.cert} ${list(certifications.map((ce) => `${ce.name} (${ce.issuer}, ${ce.year})`))}.`;
-      case "exp": return `${a.exp} ${list(experience.map((e) => `${tr(e.title)}, ${e.company} (${tr(e.dates)})`))}.`;
+      case "exp": return `${a.exp} ${list(experience.map((e) => { const org = typeof e.company === "string" ? e.company : tr(e.company); return `${tr(e.title)}${org ? `, ${org}` : ""} (${tr(e.dates)})`; }))}.`;
       case "langs": return `${a.langs} ${list(spokenLanguages.map((l) => `${tr(l.name)}: ${tr(l.level)}`))}.`;
       case "contact": return a.contact.replace("{email}", profile.email).replace("{linkedin}", profile.links.linkedin);
       case "city": return `${tr(profile.city)}. ${tr(profile.availability)}`;

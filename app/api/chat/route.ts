@@ -40,7 +40,7 @@ ${JSON.stringify(
     availability: profile.availability.en,
     roles: roles.map((r) => ({ role: r.label.en, pitch: r.pitch.en, facts: r.facts.map((f) => f.en), stack: r.stack.map((t) => t.en) })),
     projects: projects.map((p) => ({ title: p.title.en, category: p.category.en, summary: p.summary.en, tech: p.tech, github: p.githubUrl })),
-    experience: experience.map((e) => ({ title: e.title.en, company: e.company, city: e.city, dates: e.dates.en, summary: e.summary.en })),
+    experience: experience.map((e) => ({ title: e.title.en, company: typeof e.company === "string" ? e.company : e.company.en, city: e.city, dates: e.dates.en, summary: e.summary.en })),
     education: education.map((d) => ({ degree: d.degree.en, school: d.school.en, dates: d.dates.en, details: d.details.en })),
     certifications: certifications.map((c) => ({ name: c.name, issuer: c.issuer, year: c.year })),
     languages: spokenLanguages.map((l) => `${l.name.en}: ${l.level.en}`),

@@ -42,7 +42,8 @@ export interface Project {
 export interface Experience {
   dates: Text;
   title: Text;
-  company: string;
+  /** Organization; a Text when it needs translating, empty when there is none. */
+  company: string | Text;
   city: string;
   summary: Text;
 }
@@ -349,6 +350,16 @@ export const experience: Experience[] = [
     summary: {
       en: "I lead an IT consulting startup and its team: AI consulting that helps SMBs automate repetitive tasks, AI and data strategy, data consulting, IT security, custom development, and cloud and IT consulting.",
       fr: "Je dirige une startup de services-conseils en informatique et son équipe : conseil en IA pour aider les PME à automatiser leurs tâches répétitives, stratégie IA et données, conseil en données, sécurité informatique, développement sur mesure, infonuagique et TI.",
+    },
+  },
+  {
+    dates: { en: "Present", fr: "Aujourd'hui" },
+    title: { en: "Researcher in financial and data analysis", fr: "Chercheur en analyse financière et analyse de données" },
+    company: "",
+    city: "",
+    summary: {
+      en: "Financial analysis and data analysis to support data-driven decision making.",
+      fr: "Analyse financière et analyse de données pour appuyer une prise de décision fondée sur les données.",
     },
   },
   {
