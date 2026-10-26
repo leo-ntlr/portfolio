@@ -80,8 +80,8 @@ export const profile = {
   } as Record<Lang, [string, string]>,
   /** Availability line shown to the assistant and in the hero. */
   availability: {
-    en: "Available from [START DATE], open to remote and relocation.",
-    fr: "Disponible à partir du [DATE], ouvert au télétravail et à la mobilité.",
+    en: "Available now, for remote or on-site roles, anywhere.",
+    fr: "Disponible immédiatement, à distance ou sur place, partout.",
   } as Text,
 };
 
@@ -97,8 +97,8 @@ export const roles: Role[] = [
     facts: [
       { en: "Web and mobile applications", fr: "Applications web et mobiles" },
       { en: "React, Next.js, TypeScript, Node.js, React Native", fr: "React, Next.js, TypeScript, Node.js, React Native" },
-      { en: "[N] production projects", fr: "[N] projets en production" },
-      { en: "Available from [START DATE]", fr: "Disponible à partir du [DATE]" },
+      { en: "Clean code, responsive design, fast delivery", fr: "Code propre, design adaptatif, livraison rapide" },
+      { en: "Available now", fr: "Disponible immédiatement" },
     ],
     stack: [
       { en: "JavaScript", fr: "JavaScript" },
@@ -127,8 +127,8 @@ export const roles: Role[] = [
     facts: [
       { en: "Software and desktop applications", fr: "Logiciels et applications de bureau" },
       { en: "Java, C#, C++, Python, Laravel", fr: "Java, C#, C++, Python, Laravel" },
-      { en: "[N] software projects", fr: "[N] projets logiciels" },
-      { en: "Available from [START DATE]", fr: "Disponible à partir du [DATE]" },
+      { en: "Reliable, tested and maintainable software", fr: "Des logiciels fiables, testés et maintenables" },
+      { en: "Available now", fr: "Disponible immédiatement" },
     ],
     stack: [
       { en: "Java", fr: "Java" },
@@ -153,8 +153,8 @@ export const roles: Role[] = [
     facts: [
       { en: "Analysis and dashboards", fr: "Analyse et tableaux de bord" },
       { en: "SQL, Python, R, Tableau, Pandas", fr: "SQL, Python, R, Tableau, Pandas" },
-      { en: "[N] data projects", fr: "[N] projets data" },
-      { en: "Available from [START DATE]", fr: "Disponible à partir du [DATE]" },
+      { en: "From raw data to clear, useful dashboards", fr: "Des données brutes à des tableaux de bord clairs et utiles" },
+      { en: "Available now", fr: "Disponible immédiatement" },
     ],
     stack: [
       { en: "SQL", fr: "SQL" },
@@ -182,8 +182,8 @@ export const roles: Role[] = [
     facts: [
       { en: "Applied AI and LLM applications", fr: "IA appliquée et applications LLM" },
       { en: "Python, PyTorch, TensorFlow, scikit-learn, LLM APIs", fr: "Python, PyTorch, TensorFlow, scikit-learn, API LLM" },
-      { en: "[N] AI solutions", fr: "[N] solutions IA" },
-      { en: "Available from [START DATE]", fr: "Disponible à partir du [DATE]" },
+      { en: "Practical AI that answers a real business need", fr: "Une IA concrète qui répond à un vrai besoin" },
+      { en: "Available now", fr: "Disponible immédiatement" },
     ],
     stack: [
       { en: "Python", fr: "Python" },
@@ -208,8 +208,8 @@ export const roles: Role[] = [
     facts: [
       { en: "Network and infrastructure", fr: "Réseau et infrastructure" },
       { en: "Cisco IOS, routing and switching, firewalls, VPN, Windows Server", fr: "Cisco IOS, routage et commutation, pare-feu, VPN, Windows Server" },
-      { en: "[YOUR CERTIFICATIONS]", fr: "[VOS CERTIFICATIONS]" },
-      { en: "Available from [START DATE]", fr: "Disponible à partir du [DATE]" },
+      { en: "Secure, documented, well-segmented networks", fr: "Des réseaux sécurisés, documentés et bien segmentés" },
+      { en: "Available now", fr: "Disponible immédiatement" },
     ],
     stack: [
       { en: "Cisco IOS", fr: "Cisco IOS" },
@@ -238,8 +238,8 @@ export const roles: Role[] = [
     facts: [
       { en: "Hardware and software maintenance", fr: "Maintenance matérielle et logicielle" },
       { en: "Windows, macOS, Linux, Active Directory, Microsoft 365", fr: "Windows, macOS, Linux, Active Directory, Microsoft 365" },
-      { en: "[N] machines or users supported", fr: "[N] postes ou utilisateurs suivis" },
-      { en: "Available from [START DATE]", fr: "Disponible à partir du [DATE]" },
+      { en: "Fast diagnosis, clear explanations, lasting fixes", fr: "Diagnostic rapide, explications claires, solutions durables" },
+      { en: "Available now", fr: "Disponible immédiatement" },
     ],
     stack: [
       { en: "Windows 10 / 11", fr: "Windows 10 / 11" },
@@ -269,8 +269,8 @@ export const roles: Role[] = [
     facts: [
       { en: "Audit and solution design", fr: "Audit et conception de solutions" },
       { en: "Requirements analysis, Agile / Scrum, AWS, Azure, cybersecurity", fr: "Analyse des besoins, Agile / Scrum, AWS, Azure, cybersécurité" },
-      { en: "[N] client missions", fr: "[N] missions client" },
-      { en: "Available from [START DATE]", fr: "Disponible à partir du [DATE]" },
+      { en: "Understand the business first, then the technology", fr: "Comprendre le métier d'abord, la technologie ensuite" },
+      { en: "Available now", fr: "Disponible immédiatement" },
     ],
     stack: [
       { en: "Requirements analysis", fr: "Analyse des besoins" },
@@ -295,8 +295,8 @@ export const roles: Role[] = [
     facts: [
       { en: "UI/UX and prototyping", fr: "UI/UX et prototypage" },
       { en: "Figma, Adobe XD, Photoshop, Illustrator, Framer", fr: "Figma, Adobe XD, Photoshop, Illustrator, Framer" },
-      { en: "[N] interfaces", fr: "[N] interfaces" },
-      { en: "Available from [START DATE]", fr: "Disponible à partir du [DATE]" },
+      { en: "Simple, accessible interfaces people enjoy using", fr: "Des interfaces simples, accessibles et agréables à utiliser" },
+      { en: "Available now", fr: "Disponible immédiatement" },
     ],
     stack: [
       { en: "Figma", fr: "Figma" },
